@@ -1,7 +1,7 @@
 class TextBlockParser { // 文書全体（フロントマター＋本文（フェンス｜ブロック）＋エンドマター）
     static parse(text) { // text:簡易構文
-        if (0===text.trim().length) { return [] }
-        text = text.replaceAll('\r\n', '\n').replaceAll('\r', '\n')
+        text = text.trim().replaceAll('\r\n', '\n').replaceAll('\r', '\n')
+        if (0===text.length) { return [] }
         const blocks = []; let start = 0;
         for (let match of text.matchAll(/\n\n/gm)) {
             blocks.push(this.#trimLine(text.slice(start, match.index)))

@@ -1,0 +1,83 @@
+<style>
+.kao { display:inline-block; }
+.ib { display:inline-block; }
+.nw { white-space:nowrap; }
+}
+</style>
+
+<h1>顔文字が崩れてしまう</h1>
+
+<div style="font-size:16px; width:100px; background-color:#ffffaa; resize:horizontal;" contenteditable>
+<p>＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／</p>
+<p>ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!</p>
+</div>
+
+<p>　顔文字の途中で自動折返しされてしまい崩れる。orz</p>
+
+<h1>nowrap</h1>
+
+<div style="font-size:16px; width:100px; background-color:#ffffaa; resize:horizontal;" contenteditable>
+<span class="nw">＼(^o^)／</span><span class="nw">＼(^o^)／</span><span class="nw">＼(^o^)／</span><span class="nw">＼(^o^)／</span><span class="nw">＼(^o^)／</span><span class="nw">＼(^o^)／</span>
+<span class="nw">ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!</span>
+</div>
+
+<p>　顔文字の末尾が表示領域からはみ出て見えなくなる。(TдT)</p>
+
+<h1>inline-block</h1>
+
+<div style="font-size:16px; width:100px; background-color:#ffffaa; resize:horizontal;" contenteditable>
+<span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span>
+<span class="ib">ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!</span>
+<span class="ib">ｷﾀ━━━━</span><span class="ib">(ﾟ∀ﾟ)</span><span class="ib">━━━━!!</span>
+</div>
+
+<p>　長い顔文字は崩れてしまう。( ﾉД`)</p>
+
+<p>　最後のｷﾀ━は全体ではなく顔の部分とその前後の三つに分けた。これにより顔の部分が崩れることは回避できた。でもまだ微妙(´-ω-`)</p>
+
+<p>　表示領域を少しずつ大きくしていく。</p>
+
+<div style="font-size:16px; width:150px; background-color:#ffffaa; resize:horizontal;" contenteditable>
+<span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span>
+<span class="ib">ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!</span>
+<span class="ib">ｷﾀ━━━━</span><span class="ib">(ﾟ∀ﾟ)</span><span class="ib">━━━━!!</span>
+</div>
+
+<p>　表示領域を少しずつ大きくしていく。ようやく全体を表示できた。</p>
+
+<div style="font-size:16px; width:200px; background-color:#ffffaa; resize:horizontal;" contenteditable>
+<span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span>
+<span class="ib">ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!</span>
+<span class="ib">ｷﾀ━━━━</span><span class="ib">(ﾟ∀ﾟ)</span><span class="ib">━━━━!!</span>
+</div>
+
+<p>　表示領域を少しずつ大きくしていく。文字の間にｷﾀ━を入れてみる。</p>
+
+<div style="font-size:16px; width:250px; background-color:#ffffaa; resize:horizontal;" contenteditable>
+<span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span><span class="ib">＼(^o^)／</span>
+<br>
+ああああああ<span class="ib">ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!</span>いいいいいい
+<br>
+ああああああ<span class="ib">ｷﾀ━━━━</span><span class="ib">(ﾟ∀ﾟ)</span><span class="ib">━━━━!!</span>いいいいいい
+</div>
+
+<p>　表示領域の幅が顔文字全体を表示できれば、全体を囲ったほうが自動折返し後に全体を表示できて綺麗。ただし前行の空白が大きくなってしまう。</p>
+
+<ol type="A">
+<li>顔文字全体を<code>inline-block</code>する</li>
+<li>顔文字の顔の部分だけを<code>inline-block</code>する</li>
+</ol>
+
+<p>　Aでいいと思う。小さいスマホでも一行320pxあるはず。それ以上に長い顔文字は無いはず。一文字16pxとすると20字で320px。半角やプロポーショナル・フォント等でも変わるため概算にすぎない。</p>
+
+<p>　一覧画面などでは小さい領域に表示される場合もありうる。このとき長い顔文字よりも小さい領域になる可能性もある。</p>
+
+<p>　表示領域のサイズに応じて字数や囲む単位を変更できればベストだろう。顔文字のためだけにそこまでやるか？　という気がする。</p>
+
+<p>　他に気になる点は以下。</p>
+
+<ul>
+<li>ｷﾀ━の━を任意の数にして左右対象にする（俺TUEEEE!のEの数も）</li>
+<li>複数行のAAも崩れぬよう自動折返しを禁じるべき（pre要素でいい？）</li>
+</ul>
+

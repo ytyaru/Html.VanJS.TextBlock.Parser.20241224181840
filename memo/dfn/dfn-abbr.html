@@ -1,0 +1,69 @@
+
+<!-- ツールチップを非表示にする -->
+<!--
+<style>
+[role="tooltip"] {
+display: none !important;
+}
+</style>
+-->
+<style>
+[role="tooltip"],.hidetooltip{
+  visibility: hidden;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: black;
+  color: white;
+}
+[aria-describedby]:hover,
+[aria-describedby]:focus {
+  position: relative;
+}
+[role="tooltip"]:not(.hidetooltip):hover,
+[aria-describedby]:hover + [role="tooltip"]:not(.hidetooltip),
+[aria-describedby]:focus + [role="tooltip"]:not(.hidetooltip) {
+  visibility: visible;
+}
+</style>
+<script>
+// https://qiita.com/yamatai12/items/c6d1243904a7031132f5
+window.addEventListener('DOMContentLoaded', (event) => {
+    const tooltipElm = document.querySelector('[role="tooltip"]');
+
+    //Escキーを押すとtooltipにclass属性hidetooltipを追加
+    document.addEventListener('keydown',function(event) {
+                if (event.key === 'Escape') {
+                   tooltipElm.classList.add('hidetooltip');
+                }
+            });
+    //tooltopで説明される要素
+    const describedElm = document.querySelector('[aria-describedby]');
+
+    // マウスが説明される要素から離れたらhidetooltipを消す
+    describedElm.addEventListener('mouseleave',()=>{
+      tooltipElm.classList.remove('hidetooltip')})
+
+    // focusが説明される要素からはずれたらhidetooltipを消す
+    describedElm.addEventListener('focusout',()=>{
+      tooltipElm.classList.remove('hidetooltip')})
+})
+</script>
+
+<p>　<dfn title="クリック課金型広告"><abbr title="Pay Per Click">PPC</abbr></dfn>は、クリックされるごとに費用が発生する広告配信のことを指します。</p>
+
+<p>　<dfn aria-describedby="PPC"><abbr title="Pay Per Click">PPC</abbr></dfn>は、クリックされるごとに費用が発生する広告配信のことを指します。</p>
+<div role="tooltip" id="PPC">Pay Per Click<br>クリック課金型広告</div>
+
+<p>　専門用語はdfn要素で囲むべき。たとえば二つ名などで紺碧のアルペジオみたいのがあったとき、文章的にみて熟語に見えない。そこで《》の記号で囲んだり、dfn要素で囲むことで、視覚的に固有名詞であることが識別できるようにしたい場面がある。《<dfn>紺碧のアルペジオ</dfn>》みたいにすることで熟語や固有名詞だと一目で判るようにしたい。</p>
+
+<p>　特に二つ名などは複数の文節を組合せたものになっているため、文法的な解釈に混乱をきたす可能性がある。なので囲み文字やdfn要素で囲みたい。</p>
+
+<dl>
+<dt>W3C</dt>
+<dd>W3Cは、ウェブの標準化を推進する国際的な非営利団体です。</dd>
+<dt>WHATWG</dt>
+<dd>WHATWGは、ブラウザベンダーのエンジニアによって設立されたコミュニティです。</dd>
+<dt>IETF</dt>
+<dd>IETFは、インターネット技術の標準化を進める国際的な団体です。</dd>
+</dl>

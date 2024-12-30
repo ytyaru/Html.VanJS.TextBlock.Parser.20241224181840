@@ -7,11 +7,17 @@
 フェンス（主に以下以外の多様な何か）
 ---
 +++
-フェンス（主に<pre>または非変換）
+フェンス（AciiDocは非変換用だが、Javelでは再利用部品用にするか？）
 +++
 ```
-フェンス（主に<pre><code>）
+フェンス（主に`<pre><code>`）
 ```
+===
+これはhrに使う記号にしたいから無理か？
+===
+"""
+これは`<blockquote>`要素にできそう。
+"""
 ````
 
 ## フェンスヘッダ
@@ -50,6 +56,10 @@ alert('Hello JavaScript !!');
 `ascii-art`,`aa`,`^v^`|`<pre class="ascii-art">`
 `monospace`,`mono`|`<pre class="monospace">`
 `${lang}`|`<pre><code data-lang="${lang}">`
+`badge`|`[npm|v11.1.4][Build|Passing][[icon]name|msg]`みたいなSVG画像を生成する
+`mermaid`|`<pre class="mermaid">`。グラフ（フローチャート,UML等プログラミング系の図や、マインドマップ等）
+`chart`|円グラフや棒グラフなどチャート系
+`todo`|ToDo
 `url`,`link`,`🔗`|`<a href="${url}">${title}</a>`
 `annotation`,`anno`,`⚠`|`<a href="${url}">${title}</a>`
 `define`,`dictionary`|`<dl>`,`<dt>`,`<dd>`,`<dfn>`,`<abbr>`
@@ -62,6 +72,32 @@ alert('Hello JavaScript !!');
 `editor`|Javel形式を自由に書けるエディタを表示する。（viewerとセットにもできる）
 `convertor`|Javel形式をファイル参照してHTMLに変換するUIを提示する（ボタンやDnD領域）
 `part`|`任意HTML部品`
+
+* HTML系
+    * ソースコード系
+        * 構文強調系（Syntax HighLight）
+        * 実行（PlayGround、エディタ、ビューア、シェル、CLI）
+    * データ構造系
+        * 表（テーブル、フレキシブル表、表計算）
+        * 木構造（ツリー、ファイルシステム、パンくずリスト、階層（抽象〜具象(C4-model)））
+        * 一覧（リスト、検索、絞込、並替、ToDo）
+        * グラフ系(Diagram)
+        * チャート系(Chart)
+    * 専用文脈系
+        * AA
+        * チャット
+        * 掲示板
+        * ステータス
+        * 身分証明証
+* メタ系
+    * Javel
+        * エディタ
+        * ビューア
+        * コンバータ
+    * 部品
+        * 再利用パーツ定義
+        * 内部別ファイル参照
+        * 外部別ファイル参照
 
 　`part`は再利用可能な任意HTML部品を定義する。たとえば`table`の特定セルに含める別の`table`を定義して、入れ子のテーブルを作るなどが可能になる。
 

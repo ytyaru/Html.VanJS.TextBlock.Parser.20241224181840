@@ -52,6 +52,7 @@ alert('Hello JavaScript !!');
 ----|----
 `quote`|`<blockquote>`
 `table`|`<table>`
+`list`|`<ul>`,`<ol>`,`<li>`
 ``|`<pre>`
 `ascii-art`,`aa`,`^v^`|`<pre class="ascii-art">`
 `monospace`,`mono`|`<pre class="monospace">`

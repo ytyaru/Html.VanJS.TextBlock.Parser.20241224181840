@@ -20,25 +20,42 @@ class FenceBlockAnalizer {
                 const args = argTxt.trim().split(/( |\{)/).filter(v=>v)
                 const type = args[0]
                 const optTxt = 1 < args.length ? args[1] : ''
-                lines.push({
+                console.log(`sigTxt:${sigTxt}`)
+                console.log(`argTxt:${argTxt}`)
+                console.log(`args:`, args)
+                const block = {
                     text: match[0],
                     start: match.index,
                     end: REGEXP.lastIndex,
                     fence: {
                         text: sigTxt,
-                        sig: SIG,
+                        sig: SIG.replaceAll('\\',''),
                         len: sigTxt.length,
-                        type: type,
+//                        type: type,
+                        type: this.#getType(SIG.replaceAll('\\','')),
                     },
                     option: {
-//                        text: argTxt,
-                        text: optTxt,
-                        ary: text.trim().split(' ').filter(v=>v),
+                        text: argTxt,
+//                        text: optTxt,
+//                        ary: optTxt.trim().split(' ').filter(v=>v),
+//                        ary: argTxt.trim().split(' ').filter(v=>v),
+                        ary: args,
                         obj: null,
 //                        ary: this.#getOptionArray(optTxt),
 //                        obj: this.#getOptionObject(optTxt),
                     },
-                })
+                }
+                console.log(`type:`,block.fence.type)
+                // タイプ別処理
+                if ('part'===block.fence.type) {
+                    block.fence.id = args[0]
+                } else if ('code'===block.fence.type) {
+                    block.fence.language = args[0]
+                }
+//                } else if ('quote'===block.fence.type) {
+//                    block.option.text = argTxt
+//                }
+                lines.push(block)
             }
         }
         return lines.sort((a,b)=>a.start - b.start)
@@ -47,6 +64,7 @@ class FenceBlockAnalizer {
         let [blocks,start,meta,fenceText,isFenceStarted,isFrontMatter,startIdx] = [[],0,null,null,false,false,-1]
         console.log(lines)
         for (let i=0; i<lines.length; i++) {
+            console.log('line:',lines[i])
 //            isFenceStart = 0 === i % 2
 //            if (-1 < startIdx) { // フェンスブロック
             if (isFenceStarted) { // フェンスブロック
@@ -77,8 +95,8 @@ class FenceBlockAnalizer {
                             type: lines[i].fence.type,
 //                            ary: [...ho.ary, fo.ary],  // フェンス引数（配列型）
 //                            obj: {...ho.obj, fo.obj},  // フェンス引数（オブジェクト型）
-                            ary: null,
-                            obj: null,
+                            ary: [],
+                            obj: {},
                         }
                         /*
                         header: {
@@ -105,12 +123,26 @@ class FenceBlockAnalizer {
                         },
                         */
                     }
+                    // タイプ別処理
+                    if ('part'===block.fence.type) { block.fence.id = lines[startIdx].fence.id }
+                    else if ('code'===block.fence.type) { block.fence.language = lines[startIdx].fence.language }
+                    // ary, obj
                     block.header = this.#getHeadFoot(text, ho, start)
                     block.footer = this.#getHeadFoot(text, fo, end)
                     console.log(block.header)
                     console.log(block.footer)
-                    block.fence.ary = [...block.header.ary, ...block.footer.ary]
-                    block.fence.obj = {...block.header.obj, ...block.footer.obj}
+//                    block.fence.ary = [...block.header.ary, ...block.footer.ary]
+//                    block.fence.obj = {...block.header.obj, ...block.footer.obj}
+                    if (block.header.ary) {block.fence.ary.concat(block.header.ary)}
+                    if (block.footer.ary) {block.fence.ary.concat(block.footer.ary)}
+                    if (block.header.obj) {block.fence.obj = {...block.fence.obj, ...block.header.obj}}
+                    if (block.footer.obj) {block.fence.obj = {...block.fence.obj, ...block.footer.obj}}
+                    if (block.header.ary && 0===block.header.ary.length){block.header.ary=null}
+                    if (block.footer.ary && 0===block.footer.ary.length){block.footer.ary=null}
+                    if (block.fence.ary && 0===block.fence.ary.length){block.fence.ary=null}
+                    if (block.header.obj && 0===Object.keys(block.header.obj).length){block.header.obj=null}
+                    if (block.footer.obj && 0===Object.keys(block.footer.obj).length){block.footer.obj=null}
+                    if (block.fence.obj && 0===Object.keys(block.fence.obj).length){block.fence.obj=null}
                     block.body = {
                         text: text.slice(block.header.end, block.footer.start),
                         html: null,
@@ -128,13 +160,33 @@ class FenceBlockAnalizer {
         }
         return blocks
     }
+    #getType(sig) {
+             if ('"'===sig) {return 'quote'}
+        else if ('+'===sig) {return 'part'} // type:id (この部品を参照する識別子`{part:id}`として使用する)
+        else if ('`'===sig) {return 'code'} // type:language (javascript, html, css, python, ...)
+        else if ('-'===sig) {return `free` }
+        else {throw new Error(`プログラムエラー。sigが規定値ではありません。:${sig}`)}
+    }
+    /*
+    #getType(sig, arg0) {
+             if ('"'===sig) {return 'quote'}
+        else if ('+'===sig) {return 'part'} // type:id (この部品を参照する識別子`{part:id}`として使用する)
+        else if ('`'===sig) {return 'code'} // type:language (javascript, html, css, python, ...)
+        else if ('-'===sig) {return `free` }
+//        else if ('+'===sig) {return arg0 ? `part-${arg0}` : 'part'} // type:id(この部品を参照する識別子`{part:id}`として使用する)
+//        else if ('`'===sig) {return arg0 ? `code-${arg0}` : 'code'} // type:language (javascript, html, css, python, ...)
+//        else if ('-'===sig) {return `${arg0}` }
+        else {throw new Error(`プログラムエラー。sigが規定値ではありません。:${sig}`)}
+    }
     #getType(sig, hoa0, foa0) { // hot:header-option-ary[0], fot:footer-option-ary[0]
              if ('"'===sig) {return 'quote'}
         else if ('+'===sig) {return `part-${hoa0 ?? foa0}`} // type:id (この部品を参照する識別子`{part:id}`として使用する)
         else if ('`'===sig) {return `code-${hoa0 ?? foa0}`} // type:language (javascript, html, css, python, ...)
         else                {return `${hoa0 ?? foa0}`}
     }
+    */
     #getHeadFoot(script, opt, start) { // text:script全文, opt:fence.option, start:script内における開始位置
+        console.log(opt)
         const isMultiLine = opt.text.match(/(?:[^\\])\{/) // {が含まれている（\{は除く）
         if (isMultiLine) {
             // {の直後が改行かもしれない。その場合、opt.textではArrayかObjectかの判断ができない。本文全体が必要。
@@ -302,7 +354,7 @@ class Kvs {
         for (let i=0; i<eqs.length; i++) {
             const key = body.slice(keyStart, eqs[i].index)
             const vkt = body.slice(eqs[i].index+1, i+1<eqs.length ? eqs[i+1].index : body.length)
-            const vtks = vkt.split(' ')
+            const vkts = vkt.split(' ')
 //            const nextKey = vtks.slice(-1)
             const value = vkts.slice(0, -1).join(' ')
             kvs[key] = value

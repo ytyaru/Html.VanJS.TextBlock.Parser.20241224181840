@@ -12,6 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../lib/van/1.2.6/nomodule.min.js"></script>
 <script src="../../../js/footer.js"></script>
+<script src="../../../lib/util/type.js"></script>
+<script src="../../../lib/util/test/assertion.js"></script>
 <script src="../../js/fence-block-analizer.js"></script>
 <!--
 <script src="../../lib/js-yaml/4.1.0/min.js"></script>
@@ -30,6 +32,7 @@ window.addEventListener('DOMContentLoaded', async(event) => {
 ---
 標準フェンス本文。ヘッダは空。
 ---
+フェンスブロック外にあるテキスト。
 +++
 部品フェンス本文。ヘッダは空。
 +++
@@ -41,8 +44,24 @@ window.addEventListener('DOMContentLoaded', async(event) => {
 """
 `
     const fba = new FenceBlockAnalizer()
-    const fenceBlocks = fba.analize(script)
-    console.log(fenceBlocks)
+    const fbs = fba.analize(script)
+    console.log(fbs)
+
+    const a = new Assertion()
+    a.t(Type.isObjs(fbs))
+    a.t(4===fbs.length)
+    a.t('---'===fbs[0].fence.text)
+    a.t('-'===fbs[0].fence.sig)
+    a.t(3===fbs[0].fence.len)
+    a.t('free'===fbs[0].fence.type)
+    a.t(null===fbs[0].fence.ary)
+    a.t(null===fbs[0].fence.obj)
+    a.t('標準フェンス本文。ヘッダは空。'===fbs[0].body.text)
+    console.log(script.slice(fbs[0].script.start, fbs[0].script.end))
+    a.t('---\n標準フェンス本文。ヘッダは空。\n---'===script.slice(fbs[0].script.start, fbs[0].script.end))
+
+
+    a.fin()
 })
 </script>
 </head>

@@ -83,8 +83,10 @@ class FenceBlockAnalizer {
 //                    const foa0 = lines[i].option.ary[0]
                     const block = {
                         script: {
-                            start: start, // text内における当フェンスブロックの開始位置
-                            end: end, // text内における当フェンスブロックの終了位置
+                            start: lines[startIdx].start, // text内における当フェンスブロックの開始位置
+                            end: lines[i].end, // text内における当フェンスブロックの終了位置
+//                            start: start, // text内における当フェンスブロックの開始位置
+//                            end: end, // text内における当フェンスブロックの終了位置
                             text: '', // フェンスブロック全文
                         },
                         fence: {
@@ -127,7 +129,8 @@ class FenceBlockAnalizer {
                     if ('part'===block.fence.type) { block.fence.id = lines[startIdx].fence.id }
                     else if ('code'===block.fence.type) { block.fence.language = lines[startIdx].fence.language }
                     // ary, obj
-                    block.header = this.#getHeadFoot(text, ho, start)
+                    //block.header = this.#getHeadFoot(text, ho, start)
+                    block.header = this.#getHeadFoot(text, ho, lines[startIdx].start+lines[startIdx].fence.len)
                     block.footer = this.#getHeadFoot(text, fo, end)
                     console.log(block.header)
                     console.log(block.footer)
@@ -144,7 +147,8 @@ class FenceBlockAnalizer {
                     if (block.footer.obj && 0===Object.keys(block.footer.obj).length){block.footer.obj=null}
                     if (block.fence.obj && 0===Object.keys(block.fence.obj).length){block.fence.obj=null}
                     block.body = {
-                        text: text.slice(block.header.end, block.footer.start),
+                        //text: text.slice(block.header.end, block.footer.start),
+                        text: text.slice(block.header.end, block.footer.start-block.fence.len).replace(/^[\r?\n]{1,}/gm, '').replace(/[\r?\n]{1,}$/gm, ''),
                         html: null,
                     }
                     blocks.push(block)
@@ -156,7 +160,7 @@ class FenceBlockAnalizer {
                 isFenceStarted = true
 //                fenceText = lines.fence.text
             }
-            start = lines[i].end // フェンスのネストなら実行しない
+//            start = lines[i].end // フェンスのネストなら実行しない
         }
         return blocks
     }

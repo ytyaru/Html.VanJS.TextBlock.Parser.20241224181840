@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="author" content="ytyaru">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">
+<link rel="icon" href="../../../asset/image/author/ytyaru.png">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/ruby-em.css">
+<style>
+* {background-color:#000;color:#fff;}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../lib/van/1.2.6/nomodule.min.js"></script>
+<script src="../../../js/footer.js"></script>
+<script src="../../js/fence-block-analizer.js"></script>
+<!--
+<script src="../../lib/js-yaml/4.1.0/min.js"></script>
+<script src="../js/preprocessor/ruby-parser.js"></script>
+<script src="../js/default-text-block-syntax-parser.js"></script>
+<script src="../js/default-fence-block-syntax-parser.js"></script>
+<script src="../js/default-front-matter-block-syntax-parser.js"></script>
+<script src="../js/fence-block-parser.js"></script>
+<script src="../js/block-parser.js"></script>
+<script src="../js/parser.js"></script>
+<script src="../js/main.js"></script>
+-->
+<script>
+window.addEventListener('DOMContentLoaded', async(event) => {
+    const script = `
+---table
+標準フェンス本文。１
+---
++++id-0
+部品フェンス本文。２
++++
+\`\`\`html
+コードフェンス本文。３
+\`\`\`
+"""
+引用フェンス本文。４
+"""author=著者名
+`
+    const fba = new FenceBlockAnalizer()
+    const fenceBlocks = fba.analize(script)
+    console.log(fenceBlocks)
+})
+</script>
+</head>
+<body>
+</body>
+</html>

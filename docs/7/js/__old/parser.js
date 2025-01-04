@@ -2,7 +2,6 @@ class Parser { // 原稿をブロックにパースする
     constructor() {
         this._script = null; // 改行コード統一等をした原稿全文
         this._blocks = []; // 原稿をパースした結果
-        this._bP = new BlockParser()
     }
     get script() { return this._script }
     get blocks() { return this._blocks }
@@ -10,25 +9,22 @@ class Parser { // 原稿をブロックにパースする
     set textBlockPreprocess(fn) {this._bP.textBlockPreprocess=fn}
     parse(text) { // script:原稿（簡易構文が書いてあるstring）
         this._script = this.#trimNewline(this.#unifyNewline(text))
+        this._bP = new BlockParser()
         this._blocks = this._bP.parse(this._script)
         return this._blocks
     }
-    #unifyNewline(script) { return script.replaceAll(/(\r\n|\r)/gm, '\n') } // OS毎に異なる改行コードを内部で統一する
-    #trimNewline(script) { return script.replace(/^(\n)+$/,'').replace(/(\n)+$/,'') } // 前後にある改行コードを削除する
+    #unifyNewlien(script) { return script.replaceAll(/(\r\n|\r)/gm, '\n') } // OS毎に異なる改行コードを内部で統一する
+    #trimNewline(script) { return script.replaceAll(/^(\n)+$/gm,'').replaceAll(/(\n)+$/gm,'') } // 前後にある改行コードを削除する
 }
 class BlockParser {
     constructor() {
         this._fbP = new FenceBlockParser()
         this._tbP = new TextBlockParser()
     }
-    get textBlockPreprocess() {return this._tbP.preprocess}
-    set textBlockPreprocess(fn) {this._tbP.preprocess=fn}
     parse(script) {
         const fbs = this._fbP.parse(script)
         const tbs = this._tbP.parse(script, fbs)
-        console.log(`fenceBlocks:`, fbs)
-        console.log(`textBlocks:`, tbs)
-        return [...fbs, ...tbs].sort((a,b)=>a.script.start - b.script.start)
+        return [...fbs, ...tbs]
     }
 }
 

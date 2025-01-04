@@ -18,7 +18,10 @@ const Block = {
                 len: 3,
                 text: '---',
                 type: 'free', // ---:free, ```:code, ''':annotation, """:quote, @@@:address, +++:part, ===:ui, ~~~:?, ^^^:?
+                arg: null, // null/[]/{} のいずれか
                 arg: {
+                    type: 'ary', // ary/objのうちいずれか一つ
+                    val: [], // null/[]/{} のいずれか
                     ary: [], // [...header.ary, ..footer.ary]
                     obj: {}, // {...header.obj, ..footer.obj}
                 },

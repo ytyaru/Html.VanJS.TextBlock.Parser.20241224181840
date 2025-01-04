@@ -6,7 +6,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //    p.setOption({preprocessor:{text:(text)=>RubyParser.parse(text)}})
 //    p.setTextBlockPreprocessor((text)=>RubyParser.parse(text))
     p.textBlockPreprocess = (text)=>RubyParser.parse(text)
-    console.log('XXXXXXXXXXXXXXXXXXX')
     const blocks = p.parse(`
 ---
 title: 本書《ほんしょ》の表題《ひょうだい》にルビや《《強調》》ができる
@@ -31,8 +30,7 @@ date: 2024-12-24T00:00:00+09:00
 　《《強調》》する。
 
 \`\`\`\`
-外
-前
+外前
 \`\`\`
 内
 \`\`\`
@@ -63,7 +61,6 @@ date: 2024-12-24T00:00:00+09:00
 
 `)
     console.log(blocks)
-//    console.log(p.script)
 
     document.querySelector(`#viewer`).innerHTML = blocks.filter(b=>'htmlBlocks' in b && b.htmlBlocks).map(b=>b.htmlBlocks.join('')).join('')
 });

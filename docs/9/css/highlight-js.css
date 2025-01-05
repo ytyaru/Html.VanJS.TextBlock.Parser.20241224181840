@@ -1,0 +1,14 @@
+@charset "utf-8";
+pre code { display:block; }
+pre.wrap code {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+pre.nowrap code {
+  white-space: pre;
+}
+pre.nowrap-scroll code {
+  white-space: pre;
+  overflow-x: auto;
+}
+

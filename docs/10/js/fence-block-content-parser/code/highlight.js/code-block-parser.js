@@ -25,8 +25,10 @@ class CodeBlockParser { // フェンスブロック```html等をHTML要素<pre><
     #hljs(block, bi) {
         const code = block.body.text
         const language = block.fence.ary[0]
-        console.log(bi, language)
-        return `<pre data-bi="${bi}" class="hljs wrap"><code class="language-${language}">${this.#escapeHtml(block.body.text)}</code></pre>`
+        console.log(bi, language, block.body.text)
+
+        return `<pre data-bi="${bi}" class="hljs wrap"><code class="language-${language}">${block.body.text.sanitize()}</code></pre>`
+        //return `<pre data-bi="${bi}" class="hljs wrap"><code class="language-${language}">${this.#escapeHtml(block.body.text)}</code></pre>`
         //return `<pre data-bi="${bi}" class="hljs wrap"><code class="language-${language}">${block.body.text}</code></pre>`
         //return hljs.highlight(code, {language:language}) 
     }
@@ -38,6 +40,7 @@ class CodeBlockParser { // フェンスブロック```html等をHTML要素<pre><
         return null
     }
     */
+    /*
     #escapeHtml(html) { // <pre><code>内にHTMLコードを入力するとき、<等の記号をエスケープすることで要素変換されずその字自体を出す
         if(typeof html === 'string' || html instanceof String) {
             return html.replace(/[&'`"<>]/g, (match)=>{
@@ -52,6 +55,7 @@ class CodeBlockParser { // フェンスブロック```html等をHTML要素<pre><
             });
         }
     }
+    */
 }
 window.CodeBlockParser = CodeBlockParser;
 })();

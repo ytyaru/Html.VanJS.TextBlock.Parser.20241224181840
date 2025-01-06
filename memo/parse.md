@@ -40,6 +40,8 @@ block種別|意味
 `paragraph`|`<p>`
 `list`|`<ul>`,`<ol>`,`<li>`
 
+　`injection`なコードがあった場合、そのコードがある場所で、読者にXSS攻撃の可能性があることを通知しつつ、コードの全文を表示し、ボタンを押下したら実行するようにする。ボタンを押さなければ実行されない。そんな仕組みにしたほうが安全性が高い。
+
 ````jdoc
 <p>ここにあるHTMLコードをそのまま出力する。</p>
 ````
@@ -85,6 +87,25 @@ console.log('A')
 token = {
   type: 'text.heading',
   type: 'fence.code',
+}
+```
+```js
+block = {
+  type: 'text.heading', // text.(hr|paragraph|list|injection|...)
+  type: 'fence.code',
+  index, :0,
+  script: {
+    start, 0:,
+    end: 0,
+    text: '',
+  },
+  token: {
+
+  },
+  parse: {
+    html: '',
+    obj: '',
+  },
 }
 ```
 

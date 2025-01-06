@@ -29,7 +29,7 @@ class TextBlockParser { // 原稿のうち自然言語の部分をブロック�
         return wall
     }
     #parseWall(script, fbs) {
-        const html = BraceParser.parse(HrParser.parse(HeadingParser.parse(script)))
+        const html = BraceParser.parse(CodeParser.parse(HrParser.parse(HeadingParser.parse(script))))
         return (this.preprocess) ? this.preprocess(html, fbs) : html;
     }
     #getBlocks(walls) {

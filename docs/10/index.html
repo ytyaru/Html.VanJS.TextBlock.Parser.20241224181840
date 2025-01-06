@@ -8,6 +8,7 @@
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">
 <link rel="icon" href="../asset/image/author/ytyaru.png">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/performance.css">
 <link rel="stylesheet" href="css/ruby-em.css">
 <link rel="stylesheet" href="css/highlight-js.css">
 <link rel="stylesheet" href="../lib/highlight/11.11.1/highlight.js-11.11.1/src/styles/a11y-dark.css">
@@ -15,7 +16,17 @@
 <script src="../lib/van/1.2.6/nomodule.min.js"></script>
 <script src="../js/footer.js"></script>
 <script src="../lib/js-yaml/4.1.0/min.js"></script>
+<!--
 <script src="../lib/highlight/11.10.0/min.js"></script>
+<script src="../lib/highlight/11.11.1/cdn.min.js"></script>
+-->
+<script src="../lib/highlight/11.11.1/bundle-css-js-json-xml.min.js"></script>
+<!--
+<script src="../lib/highlight/11.11.1/highlight.js-11.11.1/src/languages/javascript.js"></script>
+<script src="../lib/highlight/11.11.1/highlight.js-11.11.1/src/languages/json.js"></script>
+<script src="../lib/highlight/11.11.1/highlight.js-11.11.1/src/languages/css.js"></script>
+-->
+<script src="../lib/util/string/sanitize.js"></script>
 <!--
 <script src="js/preprocessor/ruby-parser.js"></script>
 <script src="js/default-text-block-syntax-parser.js"></script>
@@ -32,6 +43,7 @@
 <script src="js/html-parser/heading-parser.js"></script>
 <script src="js/html-parser/paragraph-parser.js"></script>
 <script src="js/html-parser/hr-parser.js"></script>
+<script src="js/html-parser/code-parser.js"></script>
 <script src="js/html-parser/brace-parser.js"></script>
 <script src="js/preprocessor/ruby-parser.js"></script>
 <script src="js/fence-block-parser.js"></script>
@@ -40,7 +52,7 @@
 <script src="js/renderer.js"></script>
 <script src="js/main.js"></script>
 </head>
-<body>
+<body class="containment">
     <main>
         <div id="viewer"></div>
     </main>

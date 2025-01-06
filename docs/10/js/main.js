@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //    p.setTextBlockPreprocessor((text)=>RubyParser.parse(text))
     p.textBlockPreprocess = (text)=>RubyParser.parse(text)
     console.log('XXXXXXXXXXXXXXXXXXX')
+    console.log('XXXXXXXXXXXXXXXXXXX'.sanitize())
     const blocks = p.parse(`
 ---
 title: 本書《ほんしょ》の表題《ひょうだい》にルビや《《強調》》ができる
@@ -75,7 +76,13 @@ console.log(val);
 　《《強調》》する。
 
 　インライン要素でコードをハイライトしたい場合もある。<code>alert('Hello JS !!');</code>
-　インライン要素でコードをハイライトしたい場合もある。<code class="hljs language-javascript">alert('Hello JS !!');</code>
+　インライン要素でコードをハイライトしたい場合もある。<code class="language-javascript">alert('Hello JS !!');</code>
+　インライン要素でコードをハイライトしたい場合もある。<code class="language-html"><b>HTML要素</b></code>
+　インライン要素でコードをハイライトしたい場合もある。\`alert('Hello JS !!');\`こんな感じ。
+　インライン要素でコードをハイライトしたい場合もある。\`<b>HTML要素</b>\`こんな感じ。
+　インライン要素でコードをハイライトしたい場合もある。\`\`html <b>HTML要素</b> \`\`こんな感じ。
+　インライン要素でコードをハイライトしたい場合もある。\`\`js alert('Hello JS !!'); \`\`こんな感じ。
+　インライン要素でコードをハイライトしたい場合もある。\`\`js alert(\`Hello JS !!\`); \`\`こんな感じ。
 
 \`\`\`html
 <p>HTMLのコード</p>

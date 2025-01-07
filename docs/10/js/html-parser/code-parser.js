@@ -8,11 +8,17 @@ class CodeParser { // <code>〜<code>
             //return `<code class="hljs language-${lang}">${code.sanitize()}</code>`
             //return `<code class="hljs language-${lang}" data-two>${code}</code>`
             lang = 'js'===lang ? 'javascript' : ('html'===lang) ? 'xml' : lang;
-            return `<code class="hljs language-${('js'===lang) ? 'javascript' : lang}">${code.replaceAll('`', '&#96;')}</code>`
+            return `<code class="hljs language-${lang}">${code.replaceAll('`', '&#96;')}</code>`
+            //return `<code class="hljs language-${('js'===lang) ? 'javascript' : lang}">${code.replaceAll('`', '&#96;')}</code>`
+        }).replaceAll(/(`{1,})([^ \n]+) (.+) (`{1,})/gm, (match, start, lang, code, end, offset, string)=>{
+            //return `<code class="hljs">${code.sanitize()}</code>`
+            lang = 'js'===lang ? 'javascript' : ('html'===lang) ? 'xml' : lang;
+            return `<code class="hljs language-${lang}">${code}</code>`
         }).replaceAll(/(`{1,})(.+)(`{1,})/gm, (match, start, code, end, offset, string)=>{
             //return `<code class="hljs">${code.sanitize()}</code>`
             return `<code class="hljs">${code}</code>`
         });
+;
     }
 }
 

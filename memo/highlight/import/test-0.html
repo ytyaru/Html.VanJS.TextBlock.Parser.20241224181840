@@ -1,0 +1,88 @@
+</head>
+<meta charset="utf-8">
+<script type="module">
+// HTTPSサーバ上でないと動作しないっぽい？
+import { default as sub } from './sub.js';
+import { hljs } from '../../../doc/lib/highlight/11.10.0/es/core.min.js';
+console.log(sub)
+console.log(hljs)
+alert('X')
+(async function(){
+    const {default:sub} = await import('./sub.js')
+    const {default:hljs} = await import('../../../doc/lib/highlight/11.10.0/es/core.min.js')
+    console.log(sub)
+    console.log(hljs)
+})();
+/*
+(async function(){
+class HljsLoader { // 任意ライブラリを一度だけ読み込み登録する
+	constructor() {
+		this._core = null;
+		this._langs = new Set()
+		this._fileNameAlias = { // key:fileName, value:Alias
+			'asciidoc': ['ad', 'adoc'],
+			'cpp': ['c++','h++','hpp'],
+			'csharp': ['c#','cs'],
+			'c': ['h'],
+			'xml': ['html','xhtml'],
+			'javascript': ['js'],
+			'markdown': ['md'],
+			'makefile': ['mk'],
+			'python': ['py'],
+			'ruby': ['rb'],
+			'rust': ['rs'],
+			'shell': ['sh'],
+			'typescript': ['ts'],
+		}
+		this._loadedLangs = {}
+	}
+	async loadCore() {
+		if (!this._core) { // 多重読込防止
+			const { default:mod } = await import('./es/core.min.js')
+			this._core = mod
+		}
+		return this._core
+	}
+	isLoaded(lang) {return name in this._loadedLangs}
+	async #loadLangPromise(lang) {
+		if (this.isLoaded(lang)) {return} // 多重読込防止
+		const name = this.getName(lang)
+		const {default:mod} = await import(`./languages/${name}.min.js`)
+		return [name, mod]
+	}
+	async loadLangs(...langs) { // langs: 読み込みたい言語名
+		this.loadCore();
+		const results = await Promise.allSettled(langs.map(l=>this.#loadLangPromise(l)).filter(v=>v));
+		for (let res of resuts) {
+			const [name, mod] = res
+			hljs.registerLanguage(name, mod);
+			this._loadedLangs[name] = mod;				
+		}
+	}
+	getName(lang) {
+		const L = lang.toLowerCase()
+		for (let name of Object.keys(this._fileNameAlias)) {
+			if (name===L) {return name}
+			if (this._fileNameAlias[name].includes(L)) {return name}
+		}
+		return lang
+	}
+}
+const loader = new HljsLoader()
+await loader.loadLangs('css', 'js', 'html')
+console.log(loader)
+})();
+*/
+		/*		
+		Promise.allSettled(langs.map(l=>this.#loadLangPromise(l)).filter(v=>v)).then((results)=>{
+			for (let res of resuts) {
+				const [name, mod] = res
+				hljs.registerLanguage(name, mod);
+				this._loadedLangs[name] = mod;				
+			}
+		});
+		*/
+
+</script>
+</head>
+<body>A</body>

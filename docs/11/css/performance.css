@@ -1,0 +1,6 @@
+@charset "utf-8";
+.containment { /* CSS Containment https://triple-underscore.github.io/css-contain-ja.html */
+    contain: content; /*none | strict | content | [ size || layout || paint ] strict=size layout paint, content=layout paint */
+    content-visibility:auto; /* auto,hidden,visible */
+    contain-intrinsic-size: 1920px 1080px;
+}

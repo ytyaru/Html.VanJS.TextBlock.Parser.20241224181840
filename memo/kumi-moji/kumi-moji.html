@@ -1,0 +1,149 @@
+<!-- https://ja.wikipedia.org/wiki/%E7%B5%84%E6%96%87%E5%AD%97 -->
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <style>
+    :root {
+      --font-size:16px; /*16,24,32,48,64*/
+    }
+    * {font-size:var(--font-size);}
+    .half { font-size: 50%; }
+    /*
+    .hhalf { transform:scale(0.5, 1);transform-origin:top left;width:50%; }
+    .vhalf { transform:scale(1, 0.5);transform-origin:top left;height:50%; }
+    .hhalf { display:inline-block; width:50%; }
+    .vhalf { display:inline-block; height:50%; }
+    .hhalf { display:inline; transform:scale(0.5, 1);transform-origin:top left;width:50%; }
+    .vhalf { display:inline; transform:scale(1, 0.5);transform-origin:top left;height:50%; }
+    .hhalf { transform:scale(0.5, 1);transform-origin:top left;width:50%; }
+    .vhalf { transform:scale(1, 0.5);transform-origin:top left;height:50%; }
+    */
+    /*https://jsfiddle.net/SH9fM/6/*/
+    .hhalf { display:inline-block; transform:scale(0.5, 1);transform-origin:top left;width:50%; }
+    .vhalf { display:inline-block; transform:scale(1, 0.5);transform-origin:top left;height:50%; }
+    .v {writing-mode: vertical-rl;
+        -webkit-writing-mode: vertical-rl;
+        font-size:48px;
+    }
+    .warichu-yoko {
+        display: inline-table;
+        vertical-align: top; /*top,baseline*/
+        margin:0;padding:0;
+        line-height:1em;
+        /*
+        vertical-align: top;
+        line-height:1em;
+        */
+    }
+    .warichu {
+        display: inline-table;
+        -webkit-writing-mode: vertical-lr;
+        vertical-align: top;
+    }
+    .warichu-1, .warichu-2, .warichu-left, .warichu-right {
+     font-size:50%;
+     display: table-row;
+     margin:0;padding:0;
+     line-height:1em;
+    }
+    .warichu-grid-h {
+      display: inline-grid;
+      /*grid-template-columns: 1fr 1fr;*/
+      grid-template-rows: 1fr 1fr;
+      /*vertical-align: text-top;*/
+      /*vertical-align: top;*/
+      /*vertical-align: 12px;*/ /*font-size:16pxのときは6px, 32px:12px*/
+
+        /*font-size:16pxのときは6px, 32px:12px*/
+      vertical-align: calc(7 * (var(--font-size) / 16));
+      margin:0;padding:0;
+      letter-spacing:0;
+      /*
+        top:0;
+        bottom:0;
+        */
+    }
+    .warichu-grid-v {
+      display: inline-grid;
+      grid-template-rows: 1fr 1fr;
+      /*text-align: calc(7 * (var(--font-size) / 16));*/ /*font-size:16pxのときは6px, 32px:12px*/
+      vertical-align: calc(4 * (var(--font-size) / 16)); /*font-size:16pxのときは6px, 32px:12px*/
+      margin:0;padding:0;
+      letter-spacing:0;
+      font-feature-settings:"palt";
+    }
+    .warichu-grid-h span, .warichu-grid-v span {
+      font-size:50%;
+      margin:0;padding:0;
+      line-height:1em;
+      letter-spacing:0;
+      font-feature-settings:"palt";
+    }
+
+    .fraction {
+      display: inline-grid;
+      grid-template-rows: 1fr 1fr;
+      /*
+      font-size:50%;
+      margin:0;padding:0;
+      line-height:1em;
+      letter-spacing:0;
+      font-feature-settings:"palt";
+      */
+    }
+    .fraction span {
+      font-size:50%;
+      margin:0;padding:0;
+      line-height:1em;
+      letter-spacing:0;
+      font-feature-settings:"palt";
+    }
+    .fraction span:first-child {
+      border-block-end: solid 0.5px;
+    }
+    </style>
+</head>
+<body>
+    <p>12.3456</p>
+    <p>12<sub>.3456</sub></p>
+    <p>12<sup>.3456</sup></p>
+    <p>12<small>.3456</small></p>
+    <p>12<span class="half">.3456</span></p>
+    <p>12<span class="hhalf">.3456</span></p>
+    <p>12<span class="vhalf">.3456</span></p>
+    <p>12<span class="half-table">.3456</span></p>
+    <p class="hhalf">12.3456</p>
+    <p class="vhalf">12.3456</p>
+    <p>12<span class="warichu-yoko"><span class="warichu-1">.3</span><span class="warichu-2">456</span></span></p>
+    <p>山田太郎<span class="warichu-yoko"><span class="warichu-1">やまだ</span><span class="warichu-2">たろう</span></span></p>
+    <p>山田太郎<span class="warichu-grid-h"><span>やまだ</span><span>たろう</span></span></p>
+    <p>12<span class="warichu-grid-h"><span>.3</span><span>456</span></span></p>
+    <p><span class="warichu-grid-h"><span>1</span><span>2</span></span></p>
+
+    <div  class="v" >
+        <p>山田太郎<span class="warichu-yoko"><span class="warichu-1">やまだ</span><span class="warichu-2">たろう</span></span></p>
+        <p>山田太郎<span class="warichu-grid-v"><span>やまだ</span><span>たろう</span></span></p>
+    </div>
+
+
+    <p><span class="fraction"><span>1</span><span>2</span></span></p>
+    <!-- https://programming-cafe.com/programming/html-css/bunsuu/ -->
+    <span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+     <span style="padding: 0 10px; border-bottom: 1px solid #000000;">1</span>
+     <span style="padding: 0 10px;">2</span>
+    </span>
+    <!-- https://developer.mozilla.org/ja/docs/Web/MathML/Element/mfrac -->
+    <math>
+      <mfrac bevelled="true">
+        <mfrac>
+          <mi> a </mi>
+          <mi> b </mi>
+        </mfrac>
+        <mfrac>
+          <mi> c </mi>
+          <mi> d </mi>
+        </mfrac>
+      </mfrac>
+    </math>
+</body>
+</html>

@@ -57,6 +57,9 @@ alert('Hello JavaScript !!');
 `ascii-art`,`aa`,`^v^`|`<pre class="ascii-art">`
 `monospace`,`mono`|`<pre class="monospace">`
 `${lang}`|`<pre><code data-lang="${lang}">`
+`samp ${lang}`|`<samp><pre><code data-lang="${lang}"></samp>`
+`details ${summary}`|`<details><summary>${summary}</summary>詳細</details>`
+`template`|`<template><slot></slot></template>`
 `badge`|`[npm|v11.1.4][Build|Passing][[icon]name|msg]`みたいなSVG画像を生成する
 `mermaid`|`<pre class="mermaid">`。グラフ（フローチャート,UML等プログラミング系の図や、マインドマップ等）
 `chart`|円グラフや棒グラフなどチャート系

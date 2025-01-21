@@ -1,0 +1,117 @@
+#MDN.HTML
+#---url https://developer.mozilla.org/ja/docs/Web/HTML/Element/	text=<{slug}> title="{text}: ${summary}要素 - HTML: ハイパーテキストマークアップ言語 | MDN"
+#:baseURL	https://developer.mozilla.org/ja/docs/Web/HTML/Element/
+#:url	${baseURL}${slug}
+#:text	<${slug}>
+#:title	${text}: ${summary}要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+#()=><a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>
+#(target='_blank')=>`<a href="${url}" target="${target}" rel="noopener noreferrer">{text}</a>`
+#(slug, target='_blank')=>`<a href="${url(slug)}" target="${target}" rel="noopener noreferrer">{text}</a>`
+#slug	summary
+a	アンカー
+abbr	略語
+address	連絡先
+area	イメージマップ領域
+article	記事コンテンツ
+aside	余談
+audio	埋め込み音声
+b	注目付け
+base	文書の基底 URL 
+bdi	書字方向分離
+bdo	双方向文字列上書き
+blockquote	ブロック引用
+body	文書本体
+br	改行
+button	ボタン
+canvas	グラフィックキャンバス
+caption	表キャプション
+cite	引用元
+code	インラインコード
+col	表の列
+colgroup	表の列グループ
+data	データ
+datalist	HTML データリスト
+dd	詳細説明
+del	削除済みテキスト
+details	詳細折りたたみ
+dfn	定義
+dialog	ダイアログ
+div	コンテンツ区分
+dl	説明リスト
+dt	説明用語
+em	強調
+embed	埋め込み外部コンテンツ
+fieldset	フィールドセット
+figcaption	図キャプション
+figure	キャプションが付けられる図
+footer	フッター
+form	フォーム
+Heading_Elements	HTML の見出し
+head	文書メタデータ（ヘッダー）
+header	ヘッダー
+hgroup	見出しグループ
+hr	主題区切り（水平線）
+html	HTML 文書 / ルート
+i	慣用テキスト
+iframe	インラインフレーム
+img	画像埋め込み
+input	入力欄（フォーム入力）
+ins	<ins>挿入済みテキスト
+kbd	キーボード入力
+label	ラベル
+legend	フィールドセット凡例
+li	リスト項目
+link	外部リソースへのリンク
+main	主要
+map	イメージマップ
+mark	テキストマーク
+menu	メニュー
+meta	メタデータ
+meter	HTML メーター
+nav	ナビゲーションセクション
+noscript	スクリプト無し
+object	外部オブジェクト
+ol	順序付きリスト
+optgroup	選択肢グループ
+option	HTML 選択肢
+output	出力
+p	段落
+picture	画像
+pre	整形済みテキスト
+progress	進捗インジケーター
+q	インライン引用
+rp	ルビの代替表示用括弧
+rt	ルビテキスト
+ruby	ルビ注釈
+s	取り消し
+samp	サンプル出力
+script	スクリプト
+search	一般検索
+section	汎用セクション
+select	HTML 選択
+slot	ウェブコンポーネントのスロット
+small	附随コメント
+source	メディアまたは画像のソース
+span	コンテンツ区間
+strong	強い重要性
+style	スタイル情報
+sub	下付き文字
+summary	概要明示
+sup	上付き文字
+table	表
+tbody	テーブル本体
+td	表データセル
+template	コンテンツテンプレート
+textarea	テキストエリア
+tfoot	表フッター
+th	表見出し
+thead	表ヘッダー
+time	（日付）時刻
+title	文書題名
+tr	表の行
+track	埋め込みテキストトラック
+u	非言語的注釈（下線）
+ul	順序なしリスト
+var	変数
+video	動画埋め込み
+wbr	改行可能

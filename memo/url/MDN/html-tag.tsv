@@ -1,0 +1,110 @@
+URL	タイトル
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/a	<a>: アンカー要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/abbr	<abbr>: 略語要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/address	<address>: 連絡先要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/area	<area>: イメージマップ領域要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/article	<article>: 記事コンテンツ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/aside	<aside>: 余談要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/audio	<audio>: 埋め込み音声要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/b	<b>: 注目付け要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/base	<base>: 文書の基底 URL 要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/bdi	<bdi>: 書字方向分離要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/bdo	<bdo>: 双方向文字列上書き要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/blockquote	<blockquote>: ブロック引用要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/body	<body>: 文書本体要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/br	<br>: 改行要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/button	<button>: ボタン要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/canvas	<canvas>: グラフィックキャンバス要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/caption	<caption>: 表キャプション要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/cite	<cite>: 引用元要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/code	<code>: インラインコード要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/col	<col>: 表の列要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/colgroup	<colgroup>: 表の列グループ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/data	<data>: データ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/datalist	<datalist>: HTML データリスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/dd	<dd>: 詳細説明要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/del	<del>: 削除済みテキスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/details	<details>: 詳細折りたたみ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/dfn	<dfn>: 定義要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/dialog	<dialog>: ダイアログ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/div	<div>: コンテンツ区分要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/dl	<dl>: 説明リスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/dt	<dt>: 説明用語要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/em	<em>: 強調要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/embed	<embed>: 埋め込み外部コンテンツ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/fieldset	<fieldset>: フィールドセット要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/figcaption	<figcaption>: 図キャプション要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/figure	<figure>: キャプションが付けられる図要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/footer	<footer>: フッター要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/form	<form>: フォーム要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements	<h1>–<h6>: HTML の見出し要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/head	<head>: 文書メタデータ（ヘッダー）要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/header	<header> - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/hgroup	<hgroup>: 見出しグループ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/hr	<hr>: 主題区切り（水平線）要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/html	<html>: HTML 文書 / ルート要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/i	<i>: 慣用テキスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/iframe	<iframe>: インラインフレーム要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/img	<img>: 画像埋め込み要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/input	<input>: 入力欄（フォーム入力）要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/ins	<ins> - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/kbd	<kbd>: キーボード入力要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/label	<label>: ラベル要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/legend	<legend>: フィールドセット凡例要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/li	<li>: リスト項目要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/link	<link>: 外部リソースへのリンク要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/main	<main> - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/map	<map>: イメージマップ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/mark	<mark>: テキストマーク要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/menu	<menu>: メニュー要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/meta	<meta>: メタデータ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/meter	<meter>: HTML メーター要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/nav	<nav>: ナビゲーションセクション要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/noscript	<noscript>: スクリプト無し要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/object	<object>: 外部オブジェクト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/ol	<ol>: 順序付きリスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/optgroup	<optgroup>: 選択肢グループ要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/option	<option>: HTML 選択肢要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/output	<output>: 出力要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/p	<p>: 段落要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/picture	<picture>: 画像要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/pre	<pre>: 整形済みテキスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/progress	<progress>: 進捗インジケーター要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/q	<q>: インライン引用要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/rp	<rp>: ルビの代替表示用括弧要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/rt	<rt>: ルビテキスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/ruby	<ruby>: ルビ注釈要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/s	<s>: 取り消し要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/samp	<samp>: サンプル出力要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/script	<script>: スクリプト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/search	<search>: 一般検索要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/section	<section>: 汎用セクション要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/select	<select>: HTML 選択要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/slot	<slot>: ウェブコンポーネントのスロット要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/small	<small>: 附随コメント要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/source	<source>: メディアまたは画像のソース要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/span	<span>: コンテンツ区間要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong	<strong>: 強い重要性要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/style	<style>: スタイル情報要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/sub	<sub>: 下付き文字要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/summary	<summary>: 概要明示要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/sup	<sup>: 上付き文字要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+URL	タイトル
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/table	<table>: 表要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/tbody	<tbody>: テーブル本体要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/td	<td>: 表データセル要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/template	<template>: コンテンツテンプレート要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/textarea	<textarea>: テキストエリア要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/tfoot	<tfoot>: 表フッター要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/th	<th>: 表見出し要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/thead	<thead>: 表ヘッダー要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/time	<time>: （日付）時刻要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/title	<title>: 文書題名要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/tr	<tr>: 表の行要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/track	<track>: 埋め込みテキストトラック要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/u	<u>: 非言語的注釈（下線）要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/ul	<ul>: 順序なしリスト要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/var	<var>: 変数要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/video	<video>: 動画埋め込み要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+https://developer.mozilla.org/ja/docs/Web/HTML/Element/wbr	<wbr>: 改行可能要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+

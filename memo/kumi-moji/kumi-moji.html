@@ -79,6 +79,14 @@
       letter-spacing:0;
       font-feature-settings:"palt";
     }
+    .warichu-grid-h span.big, .warichu-grid-v span.big {
+      font-size:75%;
+      margin:0;padding:0;
+      line-height:1em;
+      letter-spacing:0;
+      font-feature-settings:"palt";
+    }
+
 
     .fraction {
       display: inline-grid;
@@ -145,5 +153,13 @@
         </mfrac>
       </mfrac>
     </math>
+
+    <p>あ<span>上にある字<br>下にある字</span>い</p>
+    <p>あ<div>上にある字<br>下にある字</div>い</p>
+    <p>あ<div style="display:inline-block;">上にある字<br>下にある字</div>い</p>
+    <p>あ<div style="display:inline-block; font-size:50%; margin:0;padding:0;line-height:1em;letter-spacing:0;">上にある字<br>下にある字</div>い</p>
+    <p>あ【<span class="warichu-grid-h"><span>上にある字<br>下にある字</span></span>】い</p>
+    <p>あ【<span class="warichu-grid-h"><span>上にある字</span><span>下にある字</span></span>】い</p>
+    <p>あ【<span class="warichu-grid-h"><span class="big">上にある字</span><span class="big">下にある字</span></span>】い</p>
 </body>
 </html>

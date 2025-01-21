@@ -29,6 +29,21 @@ replacer.get('MDN.HTML', ['heading', '_blank']); // <a href="...">&lt;h1&gt;</a>
 ```
 #MDN.HTML
 #baseURL	https://developer.mozilla.org/ja/docs/Web/HTML/Element/
+#url	${baseURL}${slug}
+#text	<${slug}>
+#title	${text}: ${summary}要素 - HTML: ハイパーテキストマークアップ言語 | MDN
+#()=><a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>
+#(target='_blank')=><a href="${url}" target="${target}" rel="noopener noreferrer">{text}</a>
+#(slug, target='_blank')=><a href="${url(slug)}" target="${target}" rel="noopener noreferrer">{text(slug)}</a>
+#slug	summary
+a	アンカー
+abbr	略語
+...
+```
+
+```
+#MDN.HTML
+#baseURL	https://developer.mozilla.org/ja/docs/Web/HTML/Element/
 #getText(name)	ifel([['heading','Heading_Elements'].some(v=>v===name), '<h1>-<h6>'], [/(h[1-6])/.test(name), `<${match[1]}>`], [true,`<${name}>`])
 #getSlug(name)	ifel(()=>items.find(i=>i.slug===name), name, ()=>/(heading|h[1-6])/.test(name), 'Heading_Elements', ()=>{throw new TypeError(`${name}は未定義のHTML要素名です。もし仕様に追加された新しい要素なら、その情報をマスターデータitemsに登録してください。`)}())
 #title(name,summary)	{getText(name)}: {summary}要素 - HTML: ハイパーテキストマークアップ言語 | MDN
